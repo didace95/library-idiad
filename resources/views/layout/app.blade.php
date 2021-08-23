@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Corlate</title>
+    <title>Home | Epreuves</title>
     {{-- {{ asset('assets/vendors/images/apple-touch-icon.png') }} --}}
     <!-- core CSS -->
     <link href= "{{ secure_asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href=" {{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href=" {{ asset('assets/css/animate.min.css') }}" rel="stylesheet">
-    <link href=" {{ asset('assets/css/prettyPhoto.css') }}"  rel="stylesheet">
-    <link href=" {{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href=" {{ asset('assets/css/icomoon.css') }}" rel="stylesheet">
-    <link href=" {{ asset('assets/css/main.css') }}" rel="stylesheet">
-    <link href=" {{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/animate.min.css') }}" rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/prettyPhoto.css') }}"  rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/icomoon.css') }}" rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/main.css') }}" rel="stylesheet">
+    <link href=" {{ secure_asset('assets/css/responsive.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -43,9 +43,10 @@
                     <div class="col-sm-6 col-xs-12">
                         <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="http://www.facebook.com/sharer.php?u=https://blog-library-app.herokuapp.com&t=partager la librarie"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://wa.me/?text=urlencodedtext"><i class="fa fa-whatsapp"></i></a></li>
+                                <li><a href="https://publish.twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://blog-library-app.herokuapp.com"><script src="https://platform.linkedin.com/in.js"><i class="fa fa-linkedin"></i></script></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
                             </ul>
@@ -57,7 +58,7 @@
                             </div>
                             <div class="dropdown">
                                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                                    {{date('d/m/Y')}}
+                                    {{date('d/m/Y')}} 
                                 </a>
                         </div>
                     </div>
@@ -82,11 +83,11 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{ url('/') }}">Accueil</a></li>
-                        <li><a href="about-us.html">A propos de nous</a></li>
+                        <li><a href="{{ url('/apropos')}}">A propos</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="blog-item.html">Blog Single</a></li>
                                 <li><a href="pricing.html">Pricing</a></li>
@@ -94,7 +95,7 @@
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a href="{{ url('/contact')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -119,9 +120,9 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Decouvrez toutes les epreuves d'examens de votre choix</h1>
+                                    <h1 class="animation animated-item-1">Découvrez toutes les épreuves d'examens de votre choix</h1>
                                     <div class="animation animated-item-2">
-                                        Nous mettons a disposition de tous, des sujets d'examens francophones et anglophones pour les candidats en salle d'examens et en ceux en classes de passage.
+                                        Nous mettons à disposition de tous, des sujets d'examens francophones et anglophones pour les candidats en salle d'examens et en ceux en classes de passage et même pour les étudiants.
                                     </div>
                                     <a class="btn-slide animation animated-item-3" href="#">Learn More</a>
                                     <a class="btn-slide white animation animated-item-3" href="#">Get Started</a>
@@ -606,19 +607,19 @@
             <div class="partners">
                 <ul>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="assets/images/partners/brand-1.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="../../assets/images/partners/brand-1.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="assets/images/partners/brand-2.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="../../assets/images/partners/brand-2.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="assets/images/partners/brand-3.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="../../assets/images/partners/brand-3.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="assets/images/partners/brand-4.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="../../assets/images/partners/brand-4.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="assets/images/partners/brand-5.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="../../assets/images/partners/brand-5.png"></a>
                     </li>
                 </ul>
             </div>
@@ -633,7 +634,7 @@
             <div class="row">
                 <div class="col-md-2">
                     <a href="#" class="footer-logo">
-                        <img src="assets/images/logo-black.png" alt="logo">
+                        <img src="../../assets/images/logo-black.png" alt="logo">
                     </a>
                 </div>
                 <div class="col-md-10">
@@ -714,14 +715,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    &copy; 2021 <a target="_blank" href="didacetchwankem@gmail.com" title="Nous joindre par mail">contact</a>. Tous les droits sont reservés.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{url('/')}}">Accueil</a></li>
+                        <li><a href="{{url('/apropos')}}">A propos</a></li>
+                        <li><a href="{{url('/contact')}}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

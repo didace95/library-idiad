@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\documents;
+use App\Http\Controllers\propos;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,6 @@ Route::get('/', function () {
     return view('layout.app');
 });
 Route::get('/documents/list','App\Http\Controllers\documents\DocController@index');
+Route::get('/apropos','App\Http\Controllers\propos\PropController@index');
+Route::get('/contact','App\Http\Controllers\contact\ContactController@index');
+Route::post('/sendmail','App\Http\Controllers\contact\ContactController@send');
