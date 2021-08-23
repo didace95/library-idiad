@@ -9,7 +9,7 @@
     <title>Home | Corlate</title>
     {{-- {{ asset('assets/vendors/images/apple-touch-icon.png') }} --}}
     <!-- core CSS -->
-    <link href= "{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href= "{{ secure_asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href=" {{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href=" {{ asset('assets/css/animate.min.css') }}" rel="stylesheet">
     <link href=" {{ asset('assets/css/prettyPhoto.css') }}"  rel="stylesheet">
