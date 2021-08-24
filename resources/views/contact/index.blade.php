@@ -8,7 +8,7 @@
         </div> 
         <div class="row contact-wrap"> 
             {{-- <div class="status alert alert-success"></div> --}}
-            <form id="" class="contact-form" name="contact-form" method="post" action="{{ url('/sendmail') }}">
+            <form id="" class="contact-form" name="contact-form" method="post" action="{{ url('/email') }}">
                 @csrf
                 <div class="col-sm-5 col-sm-offset-1">
                     <div class="form-group">

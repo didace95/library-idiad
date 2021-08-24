@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="about-img">
-                    <img src="assets/images/about-img.png" alt="">
+                    <img src="assets/images/IMG-20210805-WA0012.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-5">

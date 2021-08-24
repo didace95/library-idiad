@@ -9,14 +9,14 @@
     <title>Home | Epreuves</title>
     {{-- {{ asset('assets/vendors/images/apple-touch-icon.png') }} --}}
     <!-- core CSS -->
-    <link href= "{{ secure_asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/animate.min.css') }}" rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/prettyPhoto.css') }}"  rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/icomoon.css') }}" rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/main.css') }}" rel="stylesheet">
-    <link href=" {{ secure_asset('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href= "{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href=" {{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href=" {{ asset('assets/css/animate.min.css') }}" rel="stylesheet">
+    <link href=" {{ asset('assets/css/prettyPhoto.css') }}"  rel="stylesheet">
+    <link href=" {{ asset('assets/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href=" {{ asset('assets/css/icomoon.css') }}" rel="stylesheet">
+    <link href=" {{ asset('assets/css/main.css') }}" rel="stylesheet">
+    <link href=" {{ asset('assets/css/responsive.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -44,9 +44,9 @@
                         <div class="social">
                             <ul class="social-share">
                                 <li><a href="http://www.facebook.com/sharer.php?u=https://blog-library-app.herokuapp.com&t=partager la librarie"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://wa.me/?text=urlencodedtext"><i class="fa fa-whatsapp"></i></a></li>
+                                <li><a href="https://wa.me/?text=https://blog-library-app.herokuapp.com"><i class="fa fa-whatsapp"></i></a></li>
                                 <li><a href="https://publish.twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://blog-library-app.herokuapp.com"><script src="https://platform.linkedin.com/in.js"><i class="fa fa-linkedin"></i></script></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
                             </ul>
@@ -84,17 +84,18 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{ url('/') }}">Accueil</a></li>
                         <li><a href="{{ url('/apropos')}}">A propos</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="{{ url('/')}}">Services</a></li>
+                       
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque<i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="{{ url('/documents/list') }}">404</a></li>
+                                <li><a href="{{ url('/documents/list') }}">Enseignement secondaire</a></li>
+                                <li><a href="{{ url('/documents/list') }}">Enseignement Technique</a></li>
+                                <li><a href="{{ url('/documents/list') }}">Session Anglophones</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="{{ url('/blog') }}">Blog</a></li>
+                        <li><a href="#">Ajouter un sujet</a></li>
                         <li><a href="{{ url('/contact')}}">Contact</a></li>
                     </ul>
                 </div>
@@ -173,8 +174,8 @@
     <section id="feature">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Features</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Fonctionnalités</h2>
+                <p class="lead"> L’utilisation du site est simple, il suffit de naviguer sur les onglets (contact, services, bibliothèque …)  <br> pour arriver ou vous souhaitez.</p>
             </div>
 
             <div class="row">
@@ -184,8 +185,8 @@
                             <div class="icon">
                                 <i class="fa fa-rocket"></i>
                             </div>
-                            <h2>Fast</h2>
-                            <p>Having a baby can be a nerve wracking experience for new</p>
+                            <h2>Rapide</h2>
+                            <p>Plus votre connexion internet est fluide, plus la navigation sera rapide</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -194,8 +195,8 @@
                             <div class="icon">
                                 <i class="fa fa-check"></i>
                             </div>
-                            <h2>Easy</h2>
-                            <p>If you are looking for a new way to promote your business that</p>
+                            <h2>Simple</h2>
+                            <p>Simple d'utilisation pour tous.</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -204,8 +205,8 @@
                             <div class="icon">
                                 <i class="fa fa-bullhorn"></i>
                             </div>
-                            <h2>Cheap</h2>
-                            <p>Okay, you’ve decided you want to make money with Affiliate</p>
+                            <h2>Offres</h2>
+                            <p>Des anciens sujets d’examens de diverses natures</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -215,7 +216,7 @@
                                 <i class="fa fa-arrows"></i>
                             </div>
                             <h2>Editable</h2>
-                            <p>A Pocket PC is a handheld computer, which features many</p>
+                            <p> vous devez d’abord créer un compte pour pouvoir ajouter un sujet.</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -231,8 +232,8 @@
     <section id="recent-works">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Recent Works</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>En savoir plus</h2>
+                <p class="lead">Les images ici-bas permettent juste de mieux vous présenter notre philosophie de travail.</p>
             </div>
 
             <div class="row">
@@ -306,7 +307,7 @@
             <div class="clearfix text-center">
                 <br>
                 <br>
-                <a href="#" class="btn btn-primary">Voir plus</a>
+                <a href="#" class="btn btn-primary">Plus haut</a>
             </div>
         </div>
         <!--/.container-->
@@ -316,8 +317,8 @@
     <section id="services" class="service-item">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Service</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Nos Services</h2>
+                <p class="lead">Ici il s’agit de quelques services offerts par la plateforme, <br> généralement, ces derniers sont plus penchés vers l’informatique.</p>
             </div>
 
             <div class="row">
@@ -341,7 +342,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Web Design</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <p>Conception de sites webs avec des designs super</p>
                         </div>
                     </div>
                 </div>
@@ -352,8 +353,8 @@
                             <img class="img-responsive" src=" {{ asset('assets/images/services/motion.svg')}}">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Motion Graphics</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Conception Graphique</h3>
+                            <p>Montage de photos et vidéos, réalisation d'affiches publicitaires et autres</p>
                         </div>
                     </div>
                 </div>
@@ -365,7 +366,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Mobile UI/UX</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <p>Orientations en développement mobile</p>
                         </div>
                     </div>
                 </div>
@@ -377,7 +378,7 @@
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Web Applications</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <p>Le développement d'applications webs</p>
                         </div>
                     </div>
                 </div>
@@ -388,8 +389,8 @@
                             <img class="img-responsive" src=" {{ asset('assets/images/services/mobile-ui.svg')}}">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">SEO Marketing</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Marketing</h3>
+                            <p>Communication et esprit entrepreneuriat</p>
                         </div>
                     </div>
                 </div>
@@ -406,8 +407,8 @@
             <div class="row">
                 <div class="col-sm-12 fadeInDown">
                     <div class="skill">
-                        <h2>Our Skills</h2>
-                        <p>All users on MySpace will know that there are millions of people out there. Every <br> day besides so many people joining this community.</p>
+                        <h2>Nos compétences</h2>
+                        <p>Quelques compétences que nous possedons et mettons à diposition des  intéressés.</p>
                     </div>
                 </div>
                 <!--/.col-sm-6-->
@@ -469,10 +470,10 @@
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
                                     <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Responsive Web Design</a></li>
-                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Premium Plugin Included</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Predefine Layout</a></li>
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
+                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Vidéo d'aide</a></li>
+                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Marketing</a></li>
+                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Applications webs</a></li>
+                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Plus encore</a></li>
                                 </ul>
                             </div>
 
@@ -484,7 +485,7 @@
                                                 <img class="img-responsive" src=" {{ asset('assets/images/tab2.png')}}">
                                             </div>
                                             <div class="media-body">
-                                                <h2>Adipisicing elit</h2>
+                                                <h2>Reponsive Design</h2>
                                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.</p>
                                             </div>
                                         </div>
@@ -715,7 +716,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2021 <a target="_blank" href="didacetchwankem@gmail.com" title="Nous joindre par mail">contact</a>. Tous les droits sont reservés.
+                    &copy; 2021 <a target="_blank" href="didacetchwankem@gmail.com" title="Nous joindre par mail">didacetchwankem@gmail.com</a>. Tous les droits sont reservés.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
