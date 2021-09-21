@@ -14,7 +14,7 @@
 
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Epreuves et corrections</div>
+                    <div class="card-header">Epreuves</div>
                     <div class="card-body">
                         
                         {{-- <a href="{{ url('/admin/devoir/create') }}" class="btn btn-success btn-sm" title="Ajout candidat">
@@ -39,28 +39,26 @@
                             </form>
                         </div>
                         <div class="table-responsive">
-                            <table class="table-striped">
+                            <table class="table-striped" style="width: 90%;heigth:50%;margin-left:5s%;margin-right:5%">
                                 <thead>
                                     <tr>
-                                        <th>Nom Devoir</th><th>Description</th><th>Fichier Du Devoir</th><th>Fichier Correction</th><th>Fomateur</th><th>Action</th>
+                                        <th><b>Titre du sujet</b></th><th>Description</th><th>Fichier joint</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @for($i = 0; $i < 10; $i++)
+                                @foreach ($medias as $media)
+                                    
                                     <tr>
-                                        <td> devv {{ $i }}</td><td>Files 1</td><td><iframe src="/storage/uploads/" class="taille3"></iframe>
-                                            <a href="/storage/uploads/"> telecharger</a></td>
-                                            <td><iframe src="/storage/uploads/" class="taille3"></iframe>
-                                            <a href="/storage/uploads/"> telecharger</a></td>
-                                            <td>idiad</td>
+                                        <td> {{ $media->title }}</td><td> {{ $media->description }}</td><td><iframe src="/storage/files/{{ $media->file }}" class="taille3"></iframe>
+                                            <a href="/storage/files/{{ $media->file }}" download="/storage/files/{{ $media->file }}"> telecharger</a></td>
                                         <td>
-                                            <a href="{{ url('/admin/devoir/') }}" title="Details devoir"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                            <a href="{{ url('admin/devoir/' . '/edit') }}" title="Modifier devoir"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                            <a onclick="return myFunction();" href="{{ url('/admin/devoir/delete') }}" title="supprimer le devoir"><button  class="btn btn-danger btn-sm  deleted_element"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                            <a href="/storage/files/{{ $media->file }}" title="Visualiser"><button class="btn btn-info btn-sm"><i>Consulter</i></button></a>
+                                            {{-- <a href="{{ url('admin/devoir/' . '/edit') }}" title="Modifier devoir"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                            <a onclick="return myFunction();" href="{{ url('/admin/devoir/delete') }}" title="supprimer le devoir"><button  class="btn btn-danger btn-sm  deleted_element"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a> --}}
                                             
                                         </td>
                                     </tr>
-                                @endfor
+                                    @endforeach
                                 </tbody>
                             </table>
                             <div class="pagination-wrapper"> </div>

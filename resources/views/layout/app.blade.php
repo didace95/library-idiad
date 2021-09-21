@@ -95,7 +95,7 @@
                             </ul>
                         </li>
                         <li><a href="{{ url('/blog') }}">Blog</a></li>
-                        <li><a href="#">Ajouter un sujet</a></li>
+                        <li><a href="{{ url('/documents/create')}}">Ajouter un sujet</a></li>
                         <li><a href="{{ url('/contact')}}">Contact</a></li>
                     </ul>
                 </div>

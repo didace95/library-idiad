@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\documents;
 use App\Http\Controllers\Controller;
 
-// use App\Models\Candidat;
+ use App\Models\Media;
 // use App\Models\Devoirs_effectuer;
 // use App\Models\Devoirs_et_correction;
 use Illuminate\Http\Request;
@@ -17,11 +17,9 @@ class DocController extends Controller
      */
     public function index(Request $request)
     {
-        
+        $medias = Media::all();
         $perPage = 10;
-
-        
-        return view('document.doc');
+        return view('document.doc',compact('medias'));
     }
 
     /**
@@ -29,54 +27,43 @@ class DocController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    // public function create()
-    // {
-    //     //$id = Auth::user()->id;
-    //     //$user= User::all();
-    //     $devoir_effectuer=Devoirs_effectuer::all();
-    //     $devoir_et_correction=Devoirs_et_correction::all();
-    //     $candidat=Candidat::all();
-    //     $ariane = ['devoir_effectuer','Ajouter'];
-    // return view('admin.devoir.create',compact('ariane','devoir_et_correction','devoir_effectuer','candidat'));
-    // }
+     public function create()
+    {
+        //$id = Auth::user()->id;
+        //$user= User::all();
+       
+    return view('document.create');
+    }
 
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param \Illuminate\Http\Request $request
-    //  *
-    //  * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-    //  */
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, [
-	// 		'nom_devoir' => 'required|min:4|max:20',
-    //         'description' => 'required|min:4',
-    //         'fichier_devoir'=>'mimes:pdf,docx,doc,txt',
-    //         'fichier_correction'=>'mimes:pdf,docx,doc,txt',
-    //         'formateur_id' => 'required',
-    //     ]);
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+			'title' => 'required|min:4|max:20',
+            'description' => 'required|min:4',
+            'file'=>'required|mimes:pdf,docx,doc,txt'
+        ]);
 
-    //     $data = $request->all();
+        $data = $request->all();
 
-    //     if ($request->hasFile('fichier_devoir')) {
-    //         $fich=$request->file('fichier_devoir')->getClientOriginalName();
-    //         $data['fichier_devoir'] = $request->file('fichier_devoir')
-    //             ->storeAs('uploads',$fich, 'public');
-    //             $data['fichier_devoir']=$fich;
-    //     }
+        if ($request->hasFile('file')) {
+            $fich = $request->file('file')->getClientOriginalName();
+            $data['file'] = $request->file('file')
+                ->storeAs('files',$fich, 'public');
+                $data['file'] = $fich;
+        }
 
-    //     if ($request->hasFile('fichier_correction')) {
-    //         $file=$request->file('fichier_correction')->getClientOriginalName();
-    //         $data['fichier_correction'] = $request->file('fichier_correction')
-    //             ->storeAs('uploads',$file, 'public');
-    //             $data['fichier_correction']=$file;
-    //     }
+       
+        Media::create($data);
 
-    //     Devoirs_et_correction::create($data);
-
-    //     return redirect('admin/devoir/create')->with('create', 'Devoir  Ajouté Avec Succes!');
-    // }
+        return redirect('/documents/create')->with('flash_message', 'Sujet  Ajouté Avec Succes !!');
+    }
 
     // /**
     //  * Display the specified resource.

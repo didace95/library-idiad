@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('layout.app');
 });
 Route::get('/documents/list','App\Http\Controllers\documents\DocController@index');
+Route::get('/documents/create','App\Http\Controllers\documents\DocController@create');
+Route::post('/documents/save','App\Http\Controllers\documents\DocController@store');
 Route::get('/apropos','App\Http\Controllers\propos\PropController@index');
 Route::get('/contact','App\Http\Controllers\contact\ContactController@index');
 Route::post('/sendmail','App\Http\Controllers\contact\ContactController@send');
